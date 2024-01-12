@@ -1,12 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:shortbarta/VIew/NewsContainer.dart';
+import 'package:shortbarta/FetchingNews.dart';
 
-class homescreen extends StatelessWidget {
+
+class homescreen extends StatefulWidget {
   const homescreen({super.key});
+
+
+  @override
+  State<homescreen> createState() => _homescreenState();
+
+}
+
+class _homescreenState extends State<homescreen> {
+
+  //
+  getdata() async
+  {
+    FetchingNews intance= FetchingNews();
+    await intance.getnews();
+    print(intance.title);
+
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+   getdata();
+
+
+  }
+
+
+
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(child:Text("ShortBarta",style: TextStyle(fontWeight: FontWeight.bold),)),
+
+      ),
       body: PageView.builder(
         itemCount: 10,
           scrollDirection: Axis.vertical,

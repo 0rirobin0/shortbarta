@@ -28,12 +28,13 @@ class NewsContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          Image.network(imgurl,
-            fit: BoxFit.cover,
-            height: 400,
-            width: MediaQuery.of(context).size.width,
+                 Image.network(imgurl,
+                  fit: BoxFit.cover,
+                  height: 300,
+                  width: MediaQuery.of(context).size.width,
 
-          ),
+                             ),
+
           SizedBox(height: 5,),
           Text(newshead,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
           SizedBox(height: 10,),
@@ -61,6 +62,9 @@ class NewsContainer extends StatelessWidget {
 
 
         ],
+
+
+
       ),
 
 
