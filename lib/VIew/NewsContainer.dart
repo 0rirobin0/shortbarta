@@ -20,7 +20,7 @@ class NewsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
 
@@ -35,23 +35,23 @@ class NewsContainer extends StatelessWidget {
 
                              ),
 
-          SizedBox(height: 5,),
-          Text(newshead,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-          SizedBox(height: 10,),
-          Text(newsdes,style: TextStyle(fontSize: 16),),
-          Spacer(),
+          const SizedBox(height: 5,),
+          Text(newshead,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          const SizedBox(height: 10,),
+          Text(newsdes,style: const TextStyle(fontSize: 16),),
+          const Spacer(),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
 
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                 child: OutlinedButton(onPressed: (){
                  print('Go to this link $newsurl');
 
 
-                }, child: Text("ReadMore")),
+                }, child: const Text("ReadMore")),
               ),
             ]
 
