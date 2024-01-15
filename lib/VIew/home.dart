@@ -54,11 +54,12 @@ class _homescreenState extends State<homescreen> {
 
           scrollDirection: Axis.vertical,
           onPageChanged: (value){
+            //page change er sathe sathe call hbe r new new data dibe
             GetNews();
           },
           itemBuilder:(Context,Index){
 
-          //page change er sathe sathe call hbe r new new data dibe
+
 
 
              return NewsContainer(

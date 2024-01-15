@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shortbarta/VIew/Readdetails.dart';
 
 class NewsContainer extends StatelessWidget {
   String newshead;
@@ -36,8 +37,10 @@ class NewsContainer extends StatelessWidget {
                              ),
 
           const SizedBox(height: 5,),
-          Text(newshead,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+          Text(
+            newshead,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
           const SizedBox(height: 10,),
+
           Text(newsdes,style: const TextStyle(fontSize: 16),),
           const Spacer(),
 
@@ -49,6 +52,7 @@ class NewsContainer extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                 child: OutlinedButton(onPressed: (){
                  print('Go to this link $newsurl');
+                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Readdetails(newsurl: newsurl)));
 
 
                 }, child: const Text("ReadMore")),
