@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shortbarta/VIew/home.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
@@ -15,7 +14,7 @@ class _LoadingState extends State<Loading> {
 
   void goto()
   {
-    Future.delayed(Duration(seconds: 2),() {
+    Future.delayed(const Duration(seconds: 2),() {
       Navigator.pushReplacementNamed(context, "/homescreen");
 
     });
@@ -48,7 +47,7 @@ class _LoadingState extends State<Loading> {
           children: <Widget>[
 
             Image.asset("Assets/Images/shortbarta.jpg"),
-         SpinKitChasingDots(
+         const SpinKitChasingDots(
           color: Colors.deepPurple,
           size: 60.0,
         ),

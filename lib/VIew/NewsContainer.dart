@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shortbarta/VIew/Readdetails.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsContainer extends StatelessWidget {
   String newshead;
@@ -52,7 +53,7 @@ class NewsContainer extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                 child: OutlinedButton(onPressed: (){
                  print('Go to this link $newsurl');
-                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Readdetails(newsurl: newsurl)));
+                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Readdetails(newsUrl: newsurl)));
 
 
                 }, child: const Text("ReadMore")),

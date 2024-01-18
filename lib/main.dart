@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shortbarta/VIew/home.dart';
 import 'VIew/Loading.dart';
-import 'VIew/home.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
+
+
   runApp(const MyApp());
+
+
 }
 
 class MyApp extends StatelessWidget {
