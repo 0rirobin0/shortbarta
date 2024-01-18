@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shortbarta/VIew/Readdetails.dart';
+import 'package:shortbarta/VIew/webviewReaddetails.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsContainer extends StatelessWidget {
@@ -7,6 +7,8 @@ class NewsContainer extends StatelessWidget {
   String newsdes;
   String imgurl;
   String newsurl;
+  String pubDate;
+  String source;
 
 
 
@@ -16,6 +18,8 @@ class NewsContainer extends StatelessWidget {
     required this.newsdes,
     required this.newshead,
     required this.newsurl,
+    required this.pubDate,
+    required this.source,
 
 
   });
@@ -36,14 +40,44 @@ class NewsContainer extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
 
                              ),
+         //publication date time
+
+
+         //Publication Date
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+            Text(pubDate),
+          ],
+          ),
+
+
 
           const SizedBox(height: 5,),
           Text(
             newshead,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
           const SizedBox(height: 10,),
 
-          Text(newsdes,style: const TextStyle(fontSize: 16),),
-          const Spacer(),
+          Text(
+            //checking news overlimit charecter
+
+             newsdes.length>=300 ? newsdes.substring(0,300)+"..." :
+             newsdes.substring(0,newsdes.length-5)+"...",style: const TextStyle(fontSize: 16),),
+
+
+            //source
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+
+              children: [
+
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                        child: Text("Source: $source ",style: TextStyle(fontSize: 15),)),
+
+              ],
+            ),
+            Spacer(),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -53,10 +87,10 @@ class NewsContainer extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                 child: OutlinedButton(onPressed: (){
                  print('Go to this link $newsurl');
-                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Readdetails(newsUrl: newsurl)));
+                 Navigator.push(context, MaterialPageRoute(builder: (context)=>webviewReaddetails(newsUrl: newsurl)));
 
 
-                }, child: const Text("ReadMore")),
+                }, child: const Text("ReadMore",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),)),
               ),
             ]
 

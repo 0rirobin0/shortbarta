@@ -16,7 +16,7 @@ class FetchingNews
 
   try {
     Response r = await get(Uri.parse(
-        "https://newsdata.io/api/1/news?country=bd&apikey=pub_36345902290391243545af24fb1eef349dbcb"));
+        "https://newsdata.io/api/1/news?country=in&apikey=pub_36345902290391243545af24fb1eef349dbcb"));
     Map News = json.decode(
         utf8.decode(r.bodyBytes)); //using to decode bangla font from Json
     newslist = News['results'];

@@ -67,7 +67,9 @@ class _homescreenState extends State<homescreen> {
                imgurl:article.imgUrl,
              newshead: article.newsHead,
              newsurl: article.newsUrl,
-             newsdes: article.newsDes);
+             newsdes: article.newsDes,
+             source: article.source,
+             pubDate: article.pubDate,);
 
           }
 
