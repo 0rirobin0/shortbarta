@@ -46,9 +46,11 @@ class _LoadingState extends State<Loading> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
-            Image.asset("Assets/Images/shortbarta.jpg"),
+            Image.asset("Assets/Images/shortbarta.jpg"
+            ,width: 300,
+            ),
          const SpinKitChasingDots(
-          color: Colors.deepPurple,
+          color: Colors.black38,
           size: 60.0,
         ),
 

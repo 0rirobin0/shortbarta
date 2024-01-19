@@ -18,13 +18,14 @@ class homescreen extends StatefulWidget {
 class _homescreenState extends State<homescreen> {
 
   //variable
+  bool isloading=true;
   late Newsdatamodel article;
 
    GetNews() async {
 
      article= await FetchingNews.getnews();
      setState(() {
-
+       isloading=false;
      });
   }
 
@@ -55,6 +56,9 @@ class _homescreenState extends State<homescreen> {
           scrollDirection: Axis.vertical,
           onPageChanged: (value){
             //page change er sathe sathe call hbe r new new data dibe
+             setState(() {
+               isloading=true;
+             });
             GetNews();
           },
           itemBuilder:(Context,Index){
@@ -62,7 +66,7 @@ class _homescreenState extends State<homescreen> {
 
 
 
-             return NewsContainer(
+             return isloading? Center(child: CircularProgressIndicator(backgroundColor: Colors.black26,strokeWidth: 6,color: Colors.black,),):NewsContainer(
 
                imgurl:article.imgUrl,
              newshead: article.newsHead,

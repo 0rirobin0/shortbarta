@@ -38,7 +38,9 @@ class _ReadDetailsState extends State<webviewReaddetails> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('ShortBarta'),
+        title: Center(
+            child: Text('ShortBarta',style: TextStyle(fontWeight: FontWeight.bold)),
+      ),
       ),
       body: WebViewWidget(controller: controller,
 
