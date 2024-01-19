@@ -50,8 +50,8 @@ class _LoadingState extends State<Loading> {
             ,width: 300,
             ),
          const SpinKitChasingDots(
-          color: Colors.black38,
-          size: 60.0,
+          color: Colors.black,
+          size: 70.0,
         ),
 
 

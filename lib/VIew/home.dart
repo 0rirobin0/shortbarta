@@ -49,6 +49,7 @@ class _homescreenState extends State<homescreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(child:Text("ShortBarta",style: TextStyle(fontWeight: FontWeight.bold),)),
+        backgroundColor: Colors.white,
 
       ),
       body: PageView.builder(

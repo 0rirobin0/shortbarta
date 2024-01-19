@@ -67,13 +67,13 @@ class NewsContainer extends StatelessWidget {
 
             //source
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
 
               children: [
 
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
-                        child: Text("Source: $source ",style: TextStyle(fontSize: 15),)),
+                      padding: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
+                        child: Text("Source: $source ",style: TextStyle(fontSize: 16),)),
 
               ],
             ),
@@ -90,7 +90,7 @@ class NewsContainer extends StatelessWidget {
                  Navigator.push(context, MaterialPageRoute(builder: (context)=>webviewReaddetails(newsUrl: newsurl)));
 
 
-                }, child: const Text("ReadMore",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),)),
+                }, child: const Text("Read More",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),)),
               ),
             ]
 
