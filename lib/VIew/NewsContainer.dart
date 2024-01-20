@@ -46,8 +46,13 @@ class NewsContainer extends StatelessWidget {
          //Publication Date
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
+
             children: [
-            Text(pubDate),
+            Container(
+               padding: EdgeInsets.symmetric(horizontal: 8),
+               child: Text(pubDate),
+
+            ),
           ],
           ),
 

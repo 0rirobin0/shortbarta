@@ -19,21 +19,30 @@ class _homescreenState extends State<homescreen> {
 
   //variable
   bool isloading=true;
+
+
+
+
+
+
   late Newsdatamodel article;
 
    GetNews() async {
+     article = await FetchingNews.getnews();
 
-     article= await FetchingNews.getnews();
      setState(() {
        isloading=false;
      });
   }
+
+
 
     @override
   void initState(){
 
     super.initState();
     GetNews();
+
 
   }
 
@@ -59,10 +68,16 @@ class _homescreenState extends State<homescreen> {
             //page change er sathe sathe call hbe r new new data dibe
              setState(() {
                isloading=true;
+               GetNews();
              });
-            GetNews();
+
+
           },
+
           itemBuilder:(Context,Index){
+
+             //sending Index to Fetching News file
+           FetchingNews.getindex(Index);
 
 
 

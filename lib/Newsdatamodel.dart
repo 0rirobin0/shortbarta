@@ -1,4 +1,4 @@
-class Newsdatamodel {
+class Newsdatamodel  {
   String imgUrl;
   String newsHead;
   String newsDes;
@@ -14,8 +14,9 @@ class Newsdatamodel {
         required this.pubDate,
         required this.source});
 
-  static Newsdatamodel fromAPItoApp(Map<String, dynamic> article) {
+  static Newsdatamodel fromAPItoApp(Map<String,dynamic> article) {
     return Newsdatamodel(
+
         imgUrl: article["image_url"] ?? "https://images.unsplash.com/photo-1690050070131-bd454d501225?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         newsDes: article["description"] ?? "   Loading......",
         newsHead: article["title"]  ?? "    Loading......",
